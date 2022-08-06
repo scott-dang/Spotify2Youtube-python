@@ -1,0 +1,6 @@
+client_secrets.json
+.env
+.cache
+__pycache__/spotifyHandler.cpython-39.pyc
+__pycache__/youtubeHandler.cpython-39.pyc
+test.py
