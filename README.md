@@ -1,6 +1,6 @@
 # Spotify2YoutubePYTHON
 
-# Setup
+## Setup
 
 #### First, create an app on the Spotify Developer dashboard found [here](https://developer.spotify.com/dashboard/applications "here").
 Retrieve the Client ID and Client Secret and paste those in the .env file for Spotify OAuth
