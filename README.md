@@ -14,6 +14,7 @@ Make sure to download the .json and name it *client_secrets.json* while saving i
 Also paste any more remaining keys, ids, secrets in the .env file (should just be YouTube related). Your YouTube OAuth should now be setup.
 
 #### To execute your code, run main.py
-If you have python installed, you can simply execute the command 'python main.py' in console
+If you have python installed, you can simply execute the command python main.py in console
+
 ------------
 
