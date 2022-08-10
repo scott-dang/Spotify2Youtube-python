@@ -1,4 +1,4 @@
-# Spotify2YoutubePYTHON
+# Spotify2Youtube-python
 
 ## Setup
 
