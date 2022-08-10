@@ -3,15 +3,17 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
 
+
 def authenticateSpotify():
     load_dotenv()
     spotify_client_id = os.getenv('spotify_client_id')
     spotify_client_secret = os.getenv('spotify_client_secret')
     spotifyObj = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify_client_id,
-                                                    client_secret=spotify_client_secret,
-                                                    redirect_uri='http://127.0.0.1:5500',
-                                                    scope=['playlist-read-private', 'playlist-modify-public']))
+                                                           client_secret=spotify_client_secret,
+                                                           redirect_uri='http://127.0.0.1:5500',
+                                                           scope=['playlist-read-private', 'playlist-modify-public']))
     return spotifyObj
+
 
 def chooseUserPlaylist(spotifyObj=None):
     output = '=============================='
@@ -52,15 +54,16 @@ def grabIDSfromTrackName(spotifyObj, trackNames, spotifyTrackIds):
     valid_songs = []
 
     for name in trackNames.keys():
-        print('BEFORE SEARCH QUERY: ' + name + ' ' + artist)
         artist = trackNames[name].replace('VEVO', '').replace('vevo', '')
+        print('BEFORE SEARCH QUERY (PARSED CHANNEL NAME): ' + name + ' ' + artist)
         filtered_name = name.upper().replace('OFFICIAL', '').replace(
             'AUDIO', '').replace('VISUALIZER', '').replace('MUSIC', '').replace('VIDEO', '')
         filtered_name = filtered_name.replace('(', '').replace(')', '')
-        print('ARTIST: ' + artist)
+        print('ARTIST (CHANNEL OWNER) IN THE YT VIDEO: ' + artist)
         if (artist != '' and filtered_name.find(artist.upper()) != -1):
             artist = ''
-        print('AFTER SEARCH QUERY: ' + filtered_name + ' ' + artist + '\n')
+        print('PARSED SEARCH QUERY STRING: ' +
+              filtered_name + ' ' + artist + '\n')
         response = spotifyObj.search(
             filtered_name + ' ' + artist, 10, 0, 'track')
 
