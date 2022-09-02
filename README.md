@@ -16,7 +16,7 @@ Also paste any more remaining keys, ids, secrets in the .env file (should just b
 #### To execute your code, run main.py
 If you have python installed, you can simply execute the command _python main.py_ in console
 
-#### Note: YouTube quota costs restrict the number of API requests with each cost varying by each endpoint. Therefore, you won't be able to convert something like 1000+ songs in one day.
+#### Note: YouTube quota costs restrict the number of API requests with each cost varying by each endpoint. Therefore, you won't be able to convert something like 1000+ songs in one day if you do not have enough quota.
 
 ------------
 
